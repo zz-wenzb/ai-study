@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def generate_sinusoids(dataset, sinusoid_degree):
     """
     生成包含多个正弦波特征的数组。
@@ -27,5 +28,5 @@ def generate_sinusoids(dataset, sinusoid_degree):
         # 计算当前度数的正弦波特征，并将其追加到sinusoids数组中
         sinusoid_features = np.sin(degree * dataset)
         sinusoids = np.concatenate((sinusoids, sinusoid_features), axis=1)
-        
+
     return sinusoids

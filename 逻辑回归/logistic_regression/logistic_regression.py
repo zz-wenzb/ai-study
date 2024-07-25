@@ -50,8 +50,10 @@ class LogisticRegression:
         """
         cost_histories = []
         num_features = self.data.shape[1]
+        # enumerate()函数用于在迭代过程中同时获取元素的索引和值。
         for label_index, unique_label in enumerate(self.unique_labels):
-            current_initial_theta = np.copy(self.theta[label_index].reshape(num_features, 1))
+            # current_initial_theta = np.copy(self.theta[label_index].reshape(num_features, 1))
+            current_initial_theta = np.copy(self.theta[label_index])
             current_lables = (self.labels == unique_label).astype(float)
             (current_theta, cost_history) = LogisticRegression.gradient_descent(self.data, current_lables,
                                                                                 current_initial_theta, max_iterations)

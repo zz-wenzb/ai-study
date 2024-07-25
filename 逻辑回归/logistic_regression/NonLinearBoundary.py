@@ -51,6 +51,7 @@ sinusoid_degree = 0
 
 # 实例化逻辑回归模型
 # 逻辑回归
+# 存在的问题 polynomial_degree有值的话，后面会有个变量作用域报错
 logistic_regression = LogisticRegression(x_train, y_train, polynomial_degree, sinusoid_degree)
 
 # 训练模型

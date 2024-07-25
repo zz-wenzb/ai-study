@@ -8,6 +8,9 @@ from logistic_regression import LogisticRegression
 
 # 读取iris数据集
 data = pd.read_csv('../data/iris.csv')
+# 查看列名称
+# print(data.columns)
+# print(data.columns.tolist())
 # 定义iris种类的列表
 iris_types = ['SETOSA', 'VERSICOLOR', 'VIRGINICA']
 
@@ -15,6 +18,8 @@ iris_types = ['SETOSA', 'VERSICOLOR', 'VIRGINICA']
 x_axis = 'petal_length'
 y_axis = 'petal_width'
 
+# print(data['class'].head())
+# print(set(data['class']))
 # 绘制每种iris类型的散点图
 for iris_type in iris_types:
     # 获取class列里面数据等于iris_type的petal_length 和  petal_width 数据
@@ -35,6 +40,7 @@ num_examples = data.shape[0]
 # print(data[[x_axis, y_axis]].values)
 # reshape 转成指定的维度
 x_train = data[[x_axis, y_axis]].values.reshape((num_examples, 2))
+# print(x_train.shape)
 y_train = data['class'].values.reshape((num_examples, 1))
 
 # 初始化逻辑回归模型的参数

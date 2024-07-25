@@ -42,4 +42,3 @@ def normalize(features):
     features_normalized /= features_deviation
 
     return features_normalized, features_mean, features_deviation
-
