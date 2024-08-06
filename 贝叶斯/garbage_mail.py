@@ -36,8 +36,8 @@ def bag_of_words(vocab_list, input_set):
 
 # 训练朴素贝叶斯
 def train_BYS(train_matrix, train_classes):
-    # trainMatrix:每个returnVec组成的矩阵
-    # trainClasses：每个reVec对应的类别，1侮辱类 0正常类
+    # train_matrix:每个returnVec组成的矩阵
+    # train_classes：每个reVec对应的类别，1侮辱类 0正常类
 
     num_train_docs = len(train_matrix)  # 总文档数
     num_words = len(train_matrix[0])  # 每个文档总字数
@@ -109,7 +109,7 @@ def spam_test(method='bag'):
 
     # 遍历文件夹
     for i in range(1, 26):
-        # 读取垃圾邮件 转化乘字符串列表
+        # 读取垃圾邮件 转化成字符串列表
         word_list = text_parse(
             open('D:/python/project/study/study/贝叶斯/data/spam/%d.txt' % i, 'r').read())
         # 将列表记录加入文档列表并分类为1 侮辱类
