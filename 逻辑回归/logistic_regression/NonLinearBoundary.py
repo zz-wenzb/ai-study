@@ -61,7 +61,7 @@ logistic_regression = LogisticRegression(x_train, y_train, polynomial_degree, si
 # 为成本函数绘制图形
 columns = []
 for theta_index in range(0, thetas.shape[1]):
-    columns.append('Theta ' + str(theta_index));
+    columns.append('Theta ' + str(theta_index))
 
 # 训练结果
 labels = logistic_regression.unique_labels

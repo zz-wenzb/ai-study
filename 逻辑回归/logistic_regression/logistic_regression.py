@@ -17,13 +17,13 @@ class LogisticRegression:
     normalize_data: 是否对数据进行标准化处理。
     """
 
-    def __init__(self, data, labels, polynomial_degree=0, sinusoid_degree=0, normalize_data=False):
+    def __init__(self, data, labels, polynomial_degree=0, sinusoid_degree=0, normalize_data=True):
         """
         初始化模型，包括数据预处理和参数初始化。
         """
         (data_processed,
          features_mean,
-         features_deviation) = prepare_for_training(data, polynomial_degree, sinusoid_degree, normalize_data=False)
+         features_deviation) = prepare_for_training(data, polynomial_degree, sinusoid_degree, normalize_data=True)
 
         self.data = data_processed
         self.labels = labels
