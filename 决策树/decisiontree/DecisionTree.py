@@ -96,6 +96,7 @@ def chooseBestFeatureToSplit(dataset):
         - 最佳特征的索引。
         """
     numFeatures = len(dataset[0]) - 1
+    # 计算熵
     baseEntropy = calcShannonEnt(dataset)
     bestInfoGain = 0
     bestFeature = -1
