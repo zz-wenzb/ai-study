@@ -141,17 +141,27 @@ class item_similarity_recommender_py():
 
         cooccurence_matrix = np.matrix(np.zeros(shape=(len(user_songs), len(all_songs))), float)
 
+        # 遍历所有歌曲
         for i in range(0, len(all_songs)):
+            # 获取歌曲i的相关数据
             songs_i_data = self.train_data[self.train_data[self.item_id] == all_songs[i]]
+            # 获取歌曲i的听众集合
             users_i = set(songs_i_data[self.user_id].unique())
 
+            # 遍历用户歌曲列表
             for j in range(0, len(user_songs)):
+                # 获取歌曲j的听众集合
                 users_j = user_songs_users[j]
+                # 计算歌曲i和j的共同听众集合
                 users_intersection = users_i.intersection(users_j)
+                # 如果有共同听众
                 if len(users_intersection) != 0:
+                    # 计算歌曲i和j的听众并集
                     users_union = users_i.union(users_j)
+                    # 更新共现矩阵，反映两首歌曲听众的交集与并集的比例
                     cooccurence_matrix[j, i] = float(len(users_intersection)) / float(len(users_union))
                 else:
+                    # 如果没有共同听众，则在共现矩阵中记录为0
                     cooccurence_matrix[j, i] = 0
 
         return cooccurence_matrix
