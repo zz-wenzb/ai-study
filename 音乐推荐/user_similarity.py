@@ -43,4 +43,4 @@ def get_recommendations(user_id, num_recommendations=3):
 
 # 为用户 5 推荐物品
 recommendations_for_user_1 = get_recommendations(5)
-print("Recommendations for User 1:", recommendations_for_user_1)
+print("Recommendations for User 5:", recommendations_for_user_1)
